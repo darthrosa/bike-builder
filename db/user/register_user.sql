@@ -6,4 +6,4 @@ insert into bb_user (
     $2
 )
 
-returning user_id, username;
+returning user_id, username; 
