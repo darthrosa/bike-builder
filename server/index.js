@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express'),
       massive = require('massive'),
       session = require('express-session'),
+      authCtrl = require('./controllers/authController'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       app = express();
 
@@ -23,4 +24,7 @@ massive(CONNECTION_STRING).then(db => {
     app.listen(port, () => console.log(`Building on port: ${port}`));
 })
 
-// ENDPOINTS
+// AUTH ENDPOINTS
+app.post('/auth/login', authCtrl.login);
+app.post('/auth/register', authCtrl.register);
+app.post('/auth/logout', authCtrl.logout);
