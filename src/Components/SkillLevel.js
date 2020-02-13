@@ -4,9 +4,15 @@ import { withRouter } from 'react-router-dom';
 function SkillLevel(props) {
   return (
     <div className="SkillLevel">
-        <div onClick={() => props.history.push("/cart")}>Starter</div>
-        <div onClick={() => props.history.push("/cart")}>Intermediate</div>
-        <div onClick={() => props.history.push("/cart")}>Pro</div>
+      <div className='skill-card'>
+        <div onClick={() => props.history.push("/cart")}>DownHill</div>
+      </div>
+      <div className='skill-card'>
+        <div onClick={() => props.history.push("/cart")}>Enduro</div>
+      </div>
+      <div className='skill-card'>
+        <div onClick={() => props.history.push("/cart")}>DirtJumper</div>
+      </div>
     </div>
   );
 }

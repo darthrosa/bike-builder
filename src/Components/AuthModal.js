@@ -1,32 +1,19 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 
-class LoginRegister extends Component{
-    constructor(){
-        super()
-        this.state = {
-            username: '',
-            password: ''
-        }
-    }
-
-    handleChange = e => {
-        const {name, value} = e.target
-        this.setState({
-            [name]: value
-        })
-    }
+const AuthModal = props => {
+const [usernameInput, setUsernameInput] = useState('');
+const [passwordInput, setPasswordInput] = useState('');
 
     login = (username, password) => {
-        axios.post('/auth/login', {username, password})
+        axios.post('/auth/login', {username: usernameInput, password: passwordInput})
         .then(res => {
             console.log(res)
-            this.props.history.push('/dashboard')
         })
     }
 
     register = (username, password) => {
-        axios.post('/auth/register', {username, password})
+        axios.post('/auth/register', {username: usernameInput, password: passwordInput})
         .then(res => {
             console.log(res)
             this.props.history.push('/dashboard')
@@ -42,14 +29,14 @@ class LoginRegister extends Component{
                         <input
                             name='username'
                             value={username}
-                            onChange={e => this.handleChange(e)}
+                            onChange={e => this.setUsernameInput(e.target.value)}
                         />
                     </div>
                     <div className='login-input'>
                         <input
                             name='password'
                             value={password}
-                            onChange={e => this.handleChange(e)}
+                            onChange={e => this.setPasswordInput(e.target.value)}
                         />
                     </div>
                 </div>

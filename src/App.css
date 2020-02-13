@@ -1,11 +1,11 @@
 .App {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 
 .nav-bar {
-  height: 75px;
-  background-color: #403d39;
+  height: 80px;
+  background-color: #202020;
   display: flex;
   justify-content: space-between;
 }
@@ -13,9 +13,17 @@
 .logo {
   width: 200px;
   font-size: 40px;
+  font-weight: 900;
   margin-top: 15px;
   margin-left: 20px;
+  border: none;
   color: #FFF;
+  cursor: pointer;
+}
+
+.logo:hover {
+  color: #EF233C;
+  transition: 0.2s ease-in-out;
 }
 
 .nav-links {
@@ -30,10 +38,119 @@
   padding: 3px;
   color: #FFF;
   font-size: 18px;
+  cursor: pointer;
 }
+
+.link:hover {
+  color: #EF233C;
+  transform: 0.1s ease-in-out;
+}
+
+#build-button {
+  height: 100%;
+  width: 25%;
+  font-weight: 900;
+  border: none;
+}
+
+button {
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  padding: 9px 15px;
+  background-color: #EF233C;
+  border: 2px solid transparent;
+  color: #FFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  color: #EF233C;
+  background-color: transparent;
+  border: 2px solid #EF233C;
+  transition: 0.2s ease-in-out;
+}
+
+.dash-container{
+  height: 100%;
+  width: 100vw;
+}
+
+#part-img {
+  height: 100%;
+  width: 100vw;
+}
+
+.container-two {
+  height: 55vh;
+  width: 100vw;
+  display: flex;
+}
+
+.about-box {
+  background-color: #333333;
+  width: 40vw;
+}
+
+.about-img {
+  width: 60vw;
+  opacity: 0.8;
+}
+
+.container-three {
+  height: 55vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
+.ribbon {
+  display: grid;
+  font-size: 20px;
+  grid-gap: 2px;
+  grid-template-columns: repeat(3, 1fr) 1em;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.ribbon-element {
+  background-color: #EF233C;
+  color: #FFF;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 100px;
+  padding: 9px 9px 9px 40px;
+  position: relative;
+  text-decoration: none;
+}
+
+
+.ribbon-element:hover {
+  color: #EF233C;
+  background-color: #FFF;
+  transition: 0.2s ease-in-out;
+}
+
+footer {
+  height: 160px;
+  background-color: #202020;
+}
+
 
 .SkillLevel {
   height: 100vh;
   width: 100%;
-  background-color: #403d39;
+  background-color: #202020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-card {
+  box-shadow: 0px 2px 6px 0px rgba(0,0,0,.5);
+  min-width: 250px;
+  margin: 15px;
+  cursor: pointer;
 }

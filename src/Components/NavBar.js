@@ -5,7 +5,7 @@ class NavBar extends React.Component {
 
     render(){
         console.log(this.props);
-        if (this.props.location.pathname === "/skill" || this.props.location.pathname === "/cart") {
+        if (this.props.location.pathname === "/style" || this.props.location.pathname === "/cart") {
             return <></>;
         } else {
             return (
@@ -14,11 +14,11 @@ class NavBar extends React.Component {
                         BikeBuilder
                     </div>
                     <div className="nav-links">
-                        <div className='link' onClick={() => this.props.history.push("/about")}>About</div>
+                        <div className='link' onClick={() => this.props.history.push("/howto")}>How To</div>
                         <div className='link' onClick={() => this.props.history.push("/resource")}>
                             Resources
                         </div>
-                        <button onClick={() => this.props.history.push("/skill")} className="build-button">Build</button>
+                        <button onClick={() => this.props.history.push("/style")} id="build-button">Build</button>
                     </div>
                 </div>
             );
