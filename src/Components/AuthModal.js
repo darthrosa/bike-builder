@@ -1,48 +1,44 @@
-import React, {Component} from 'react'
-import axios from 'axios'
+import React, {useState} from 'react';
+import {connect} from 'react-redux';
+import {getUser} from '../redux/reducer';
+import {withRouter} from 'react-router-dom';
+import axios from 'axios';
 
 const AuthModal = props => {
-const [usernameInput, setUsernameInput] = useState('');
-const [passwordInput, setPasswordInput] = useState('');
+    const [usernameInput, setUsernameInput] = useState('');
+    const [passwordInput, setPasswordInput] = useState('');
 
-    login = (username, password) => {
+    const login = () => {
         axios.post('/auth/login', {username: usernameInput, password: passwordInput})
-        .then(res => {
-            console.log(res)
-        })
+        .then(res => { props.getUser(res.data)
+            props.history.push('/style')
+        }).catch(err => console.log(err))
     }
 
-    register = (username, password) => {
+     const register = () => {
         axios.post('/auth/register', {username: usernameInput, password: passwordInput})
-        .then(res => {
-            console.log(res)
-            this.props.history.push('/dashboard')
-        })
+        .then(res => { props.getUser(res.data)
+            props.history.push('/style')
+        }).catch(err => console.log(err))
     }
 
-    render(){
-        const {username, password} = this.state
-        return(
-            <div className='landing-container'>
-                <div className='landing-card'>
-                    <div className='login-input'>
-                        <input
-                            name='username'
-                            value={username}
-                            onChange={e => this.setUsernameInput(e.target.value)}
-                        />
-                    </div>
-                    <div className='login-input'>
-                        <input
-                            name='password'
-                            value={password}
-                            onChange={e => this.setPasswordInput(e.target.value)}
-                        />
-                    </div>
-                </div>
-            </div>
-        )
-    }
+    return (
+        <div className='auth-modal'>
+            <div>WAIT YOU GOTTA LOGIN YO!</div>
+            <input
+                value={usernameInput}
+                placeholder='Username'
+                onChange={(e) => setUsernameInput(e.target.value)}/>
+            <input
+                type='password'
+                value={passwordInput}
+                placeholder='Password'
+                onChange={(e) => setPasswordInput(e.target.value)}/>
+            <button onClick={login}>Login</button>
+            <button onClick={register}>Register</button>
+        </div>
+    )
+
 }
 
-export default LoginRegister;
+export default withRouter(connect(null, {getUser})(AuthModal));

@@ -5,6 +5,7 @@
 
 .nav-bar {
   height: 80px;
+  width: 100%;
   background-color: #202020;
   display: flex;
   justify-content: space-between;
@@ -16,6 +17,7 @@
   font-weight: 900;
   margin-top: 15px;
   margin-left: 20px;
+  letter-spacing: 0.5px;
   border: none;
   color: #FFF;
   cursor: pointer;
@@ -36,6 +38,7 @@
 
 .link {
   padding: 3px;
+  font-weight: 400;
   color: #FFF;
   font-size: 18px;
   cursor: pointer;
@@ -73,14 +76,33 @@ button:hover {
   transition: 0.2s ease-in-out;
 }
 
+.modal-container {
+  background-color: transparent;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  position: absolute;
+}
+
+#auth-modal {
+  background-color: blue;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
 .dash-container{
   height: 100%;
   width: 100vw;
 }
 
 #part-img {
-  height: 100%;
-  width: 100vw;
+  height: 80vh;
+  width: 100%;
+  opacity: .5;
 }
 
 .container-two {
@@ -138,6 +160,38 @@ footer {
   background-color: #202020;
 }
 
+.res-container {
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+}
+
+.res-container-top {
+  height: 60vh;
+  width: 100vw;
+  background-color: #f8f8f8;
+  background-image: -webkit-linear-gradient(50deg, #FFF 50%, #f8f8f8 50%);
+}
+
+.res-box {
+  background-color: #333333;
+  width: 45vw;
+}
+
+iframe {
+  height: 100%;
+  width: 65vw;
+}
+
+.res-img {
+  width: 55vw;
+}
+
+#res-img-split {
+  background-color: #013A6B;
+  background-image: -webkit-linear-gradient(30deg, #013A6B 50%, #004E95 50%);
+  width: 65vw;
+}
 
 .SkillLevel {
   height: 100vh;

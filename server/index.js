@@ -6,6 +6,7 @@ const express = require('express'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       app = express();
 
+
 app.use(express.json())
 app.use(
     session({
@@ -14,7 +15,7 @@ app.use(
         secret: SESSION_SECRET,
         cookie: {maxAge: 1000 * 60 * 60 * 24 * 30}
     })
-)
+    )
 
 
 massive(CONNECTION_STRING).then(db => {
@@ -23,6 +24,7 @@ massive(CONNECTION_STRING).then(db => {
     const port = SERVER_PORT;
     app.listen(port, () => console.log(`Building on port: ${port}`));
 })
+
 
 // AUTH ENDPOINTS
 app.post('/auth/login', authCtrl.login);

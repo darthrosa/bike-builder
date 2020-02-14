@@ -5,13 +5,13 @@ function SkillLevel(props) {
   return (
     <div className="SkillLevel">
       <div className='skill-card'>
-        <div onClick={() => props.history.push("/cart")}>DownHill</div>
+        <div onClick={() => props.history.push("/cart")}>Downhill</div>
       </div>
       <div className='skill-card'>
         <div onClick={() => props.history.push("/cart")}>Enduro</div>
       </div>
       <div className='skill-card'>
-        <div onClick={() => props.history.push("/cart")}>DirtJumper</div>
+        <div onClick={() => props.history.push("/cart")}>Dirt jumper</div>
       </div>
     </div>
   );
