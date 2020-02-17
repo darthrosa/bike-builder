@@ -40,17 +40,17 @@ class NavBar extends React.Component {
                         BikeBuilder
                     </div>
                     <nav className="nav-links">
+                        <div className='link' onClick={() => this.props.history.push("/about")}>About</div>
                         <div className='link' onClick={() => this.props.history.push("/resource")}>
                             Resources
                         </div>
-                        <div className='link' onClick={() => this.props.history.push("/")}>Login</div>
                         <button onClick={() => this.userAuthenticated()} id="build-button">Build</button>
                     </nav>
                 </div>
                 {this.state.showModal ? (
                     <div className='modal-container'>
                         <div id='auth-modal'>
-                            <AuthModal/>
+                            <AuthModal handleToggle={this.handleToggle}/>
                         </div>
                     </div>
                     ) : null

@@ -12,6 +12,7 @@ const AuthModal = props => {
         axios.post('/auth/login', {username: usernameInput, password: passwordInput})
         .then(res => { props.getUser(res.data)
             props.history.push('/style')
+            props.handleToggle();
         }).catch(err => console.log(err))
     }
 

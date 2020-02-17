@@ -5,16 +5,22 @@ function Resources() {
     <div className="Resources">
       <div className='resources-container'>
         <div className='res-container'>
+          <div id='res-vid'>
+            <iframe src="https://www.youtube.com/embed/csYlxj_-ZRI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
           <div className='res-box'>
             <p>FIND YOU STYLE</p>
             <p>Buying a mountain bike can be confusing at the best of times, thankfully US tech editor Josh Patterson is here to run you through what you need to know.</p>
             <button>Learn More</button>
           </div>
-          <div id='res-vid'>
-            <iframe src="https://www.youtube.com/embed/csYlxj_-ZRI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div className='res-container-bikes'>
+          <div className='bike-container'>
+            <div>DownHill</div>
+            <div>Enduro</div>
+            <div>Dirt Jumper</div>
           </div>
         </div>
-        <div className='res-container-top'></div>
         <div className='res-container'>
           <div className='res-box'>
             <p>Title</p>

@@ -31,15 +31,15 @@ class Dashboard extends Component {
       <div className="Dashboard">
         <div className='dash-container'>
           <div className='container-one'>
-            <img id="part-img"
-               src={`https://papers.co/wallpaper/papers.co-me59-yosemite-snow-dark-mountain-nature-40-wallpaper.jpg`} alt='bike-part-img'
-               />
+            <img className="slide-img" 
+                 src='https://i.ytimg.com/vi/bIhm9RaX7qw/maxresdefault.jpg'
+                 alt='group img'/>
           </div>
           <div className='container-two'>
             <div className='about-box'>
               <p>Title</p>
               <p>Text</p>
-              <button>Learn More</button>
+              <button onClick={() => this.props.history.push('/about')}>Learn More</button>
             </div>
             <img className='about-img' 
                  src='https://i.ytimg.com/vi/hvJ8kBVMAgM/maxresdefault.jpg' alt='about-img'/>
