@@ -14,6 +14,6 @@ export default (
         <Route path='/style' component={SkillLevel}/>
         <Route path='/resource' component={Resources}/>
         <Route path='/about' component={About}/>
-        <Route path='/cart' component={PickCart}/>
+        <Route path='/cart/' component={PickCart}/>
     </Switch>
 )

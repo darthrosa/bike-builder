@@ -45,13 +45,18 @@ class Dashboard extends Component {
                  src='https://i.ytimg.com/vi/hvJ8kBVMAgM/maxresdefault.jpg' alt='about-img'/>
           </div>
           <div className='container-three'>
-            <nav className="ribbon ribbon-beta" role="navigation" aria-label="breadcrumbs">
+            <nav className="ribbon ribbon-alpha" role="navigation" aria-label="breadcrumbs">
               <div className="ribbon-element" 
-                   onClick={() => this.props.history.push("/style")}>Pick a style</div>
+                   onClick={() => this.props.history.push("/style")}>Pick a style
+                <div class="arrow-right"/>
+              </div>
+              <div className="ribbon-element" 
+                   onClick={() => this.props.history.push("/style")}>Build your bike
+                <div class="arrow-right"/>
+              </div>
               <div className="ribbon-element"
-                   onClick={() => this.props.history.push("/style")}>Build your bike</div>
-              <div className="ribbon-element" 
-                   href="https://snowbrains.com/bike-parks/" aria-current="page">Ride!</div>
+                 aria-current="page">Ride!
+              </div>
             </nav>
           </div>
         </div>
