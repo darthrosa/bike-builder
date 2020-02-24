@@ -1,20 +1,20 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
-import { getUser } from '../redux/reducer';
+import { getUser } from '../redux/userReducer';
 import AuthModal from './AuthModal';
 
 class NavBar extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-          showModal: false
+        //   showModal: false
         }
       }
 
       userAuthenticated = () => {
         console.log(this.props)
-        if(this.props.user.username){
+        if(this.props.userReducer.user.username){
             this.props.history.push('/style')
         } else {
             console.log('hit else')
@@ -30,7 +30,7 @@ class NavBar extends React.Component {
 
     render(){
         console.log(this.props);
-        if (this.props.location.pathname === "/style" || this.props.location.pathname === "/cart") {
+        if (this.props.location.pathname === "/style" || this.props.location.pathname === "/bike/1" || this.props.location.pathname === "/bike/2" || this.props.location.pathname === "/bike/3" || this.props.location.pathname === "/cart"){
             return <></>;
         } else {
             return (
@@ -40,7 +40,7 @@ class NavBar extends React.Component {
                         BikeBuilder
                     </div>
                     <nav className="nav-links">
-                        <div className='link' onClick={() => this.props.history.push("/about")}>About</div>
+                        <div className='link' onClick={() => this.props.history.push("/events")}>Events</div>
                         <div className='link' onClick={() => this.props.history.push("/resource")}>
                             Resources
                         </div>

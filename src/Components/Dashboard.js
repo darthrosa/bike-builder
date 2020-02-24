@@ -10,21 +10,7 @@ class Dashboard extends Component {
       showModal: false
     }
   }
-
-  userAuthenticated = () => {
-    console.log(this.props)
-    if(this.props.user.username){
-        this.props.history.push('/style')
-    } else {
-        console.log('hit else')
-        this.handleToggle()
-        console.log(this.state.showModal)
-    }
-  }
-
-  handleToggle = () => {
-    this.setState({showModal: !this.state.showModal})
-  }
+  
 
   render(){
     return (
@@ -39,7 +25,7 @@ class Dashboard extends Component {
             <div className='about-box'>
               <p>Title</p>
               <p>Text</p>
-              <button onClick={() => this.props.history.push('/about')}>Learn More</button>
+              <button onClick={() => this.props.history.push('/event')}>Learn More</button>
             </div>
             <img className='about-img' 
                  src='https://i.ytimg.com/vi/hvJ8kBVMAgM/maxresdefault.jpg' alt='about-img'/>

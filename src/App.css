@@ -58,13 +58,33 @@
   border: none;
 }
 
-button {
+a {
   font-weight: 700;
   font-size: 14px;
   border: none;
   padding: 9px 15px;
   background-color: #EF233C;
   border: 2px solid transparent;
+  color: #FFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+}
+  
+a:hover {
+  color: #EF233C;
+  background-color: transparent;
+  border: 2px solid #EF233C;
+  transition: 0.2s ease-in-out;
+}
+
+button {
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  padding: 9px 15px;
+  background-color: #EF233C;
   color: #FFF;
   text-transform: uppercase;
   cursor: pointer;
@@ -203,7 +223,7 @@ footer {
   height: 60vh;
   width: 100vw;
   background-color: #f8f8f8;
-  background-image: -webkit-linear-gradient(50deg, #FFF 50%, #f8f8f8 50%);
+  background-image: -webkit-linear-gradient(60deg, #FFF 50%, #f8f8f8 50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,9 +235,21 @@ footer {
   justify-content: space-evenly;
 }
 
+.bike-img {
+  max-width: 33vw;
+  max-height: 40vh;
+  margin-right: 40px;
+}
+
+.bike-img:hover{
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
 .res-box {
   background-color: #333333;
   width: 45vw;
+  align-items: center;
 }
 
 iframe {
@@ -233,6 +265,11 @@ iframe {
   background-color: #013A6B;
   background-image: -webkit-linear-gradient(30deg, #013A6B 50%, #004E95 50%);
   width: 55vw;
+}
+
+.Event{
+  height: 100vh;
+  width: 100%;
 }
 
 .SkillLevel {
@@ -316,11 +353,14 @@ iframe {
   left: 0;
 }
 
-.Cart {
-height: 100vh;
-width: 100%;
-background-color: #333333;
-color: #FFF;
+.PickCart {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #333333;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
 }
 
 .cart-nav{
@@ -346,13 +386,34 @@ color: #FFF;
   transition: 0.2s ease-in-out;
 }
 
-.About{
-  height: 100vh;
-  width: 100%;
+.pick-nav{
+  min-width: 15vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.about-container{
-  height: 100vh;
+.cart-img:hover{
+  color: #EF233C;
+  transition: 0.2s ease-in-out;
+}
+
+#logout:hover{
+  border: none;
+}
+
+.product-img{
+  max-width: 300px;
+  max-height: 250px;
+}
+
+/* .product-container{
+  height: 700px;
+} */
+
+#cart-footer {
+  height: 100px;
   width: 100%;
-  background-image: -webkit-linear-gradient(50deg, #FFF 50%, #f8f8f8 50%);
+  background-color: #202020;
+  justify-self: flex-end;
 }
