@@ -34,11 +34,11 @@ class Dashboard extends Component {
             <nav className="ribbon ribbon-alpha" role="navigation" aria-label="breadcrumbs">
               <div className="ribbon-element" 
                    onClick={() => this.props.history.push("/style")}>Pick a style
-                <div class="arrow-right"/>
+                <div className="arrow-right"/>
               </div>
               <div className="ribbon-element" 
                    onClick={() => this.props.history.push("/style")}>Build your bike
-                <div class="arrow-right"/>
+                <div className="arrow-right"/>
               </div>
               <div className="ribbon-element"
                  aria-current="page">Ride!

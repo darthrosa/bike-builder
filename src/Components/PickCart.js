@@ -19,7 +19,7 @@ class PickCart extends Component {
   }
 
   componentDidMount(){
-    axios.get(`/api/skill/${this.props.match.params.id}`).then(res => { console.log(res)
+    axios.get(`/api/skill/${this.props.match.params.id}`).then(res => {
       this.setState({products: res.data})
     })
   }
@@ -58,7 +58,7 @@ class PickCart extends Component {
           this.addToCart(e.product_id, e.price)
           }}>Add to Cart</button>
         </div>)
-      }
+      } else {return null}
     })
     const tireDisplay = this.state.products.map((e, i) => {
       if (e.category_id === 2){
@@ -72,7 +72,7 @@ class PickCart extends Component {
           this.addToCart(e.product_id, e.price)
           }}>Add to Cart</button>
         </div>)
-      }
+      } else {return null}
     })
     const handleBarDisplay = this.state.products.map((e, i) => {
       if (e.category_id === 3){
@@ -86,7 +86,7 @@ class PickCart extends Component {
           this.addToCart(e.product_id, e.price)
           }}>Add to Cart</button>
         </div>)
-      }
+      } else {return null}
     })
     const forkDisplay = this.state.products.map((e, i) => {
       if (e.category_id === 4){
@@ -100,7 +100,7 @@ class PickCart extends Component {
           this.addToCart(e.product_id, e.price)
           }}>Add to Cart</button>
         </div>)
-      }
+      } else {return null}
     })
     const pedalDisplay = this.state.products.map((e, i) => {
       if (e.category_id === 6){
@@ -114,7 +114,7 @@ class PickCart extends Component {
           this.addToCart(e.product_id, e.price)
           }}>Add to Cart</button>
         </div>)
-      }
+      } else {return null}
     })
     return (
       <div className="PickCart">

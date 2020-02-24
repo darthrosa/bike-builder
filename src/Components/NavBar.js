@@ -13,11 +13,9 @@ class NavBar extends React.Component {
       }
 
       userAuthenticated = () => {
-        console.log(this.props)
         if(this.props.userReducer.user.username){
             this.props.history.push('/style')
         } else {
-            console.log('hit else')
             this.handleToggle()
             console.log(this.state.showModal)
         }
@@ -29,7 +27,6 @@ class NavBar extends React.Component {
 
 
     render(){
-        console.log(this.props);
         if (this.props.location.pathname === "/style" || this.props.location.pathname === "/bike/1" || this.props.location.pathname === "/bike/2" || this.props.location.pathname === "/bike/3" || this.props.location.pathname === "/cart"){
             return <></>;
         } else {

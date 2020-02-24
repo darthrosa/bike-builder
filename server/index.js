@@ -41,6 +41,7 @@ app.get('/api/skill/:id', skillCtrl.getSkill);
 app.get('/api/cart/:id', cartCtrl.getCart);
 app.post('/api/cart', cartCtrl.addToCart);
 app.delete('/api/cart/:id', cartCtrl.removeFromCart);
+app.post('/api/payment', cartCtrl.payment);
 
 //NODEMAILER
 // app.post('api/email', emailCtrl.email);

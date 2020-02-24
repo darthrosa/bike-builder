@@ -357,8 +357,8 @@ iframe {
   height: auto;
   min-height: 100vh;
   width: 100%;
-  background-color: #333333;
-  color: #FFF;
+  background-color: #FFF;
+  /* background-image: -webkit-linear-gradient(90deg, #FFF 50%, #f8f8f8 50%); */
   display: flex;
   flex-direction: column;
 }
@@ -367,6 +367,7 @@ iframe {
   height: 80px;
   width: 100%;
   background-color: #202020;
+  color: #FFF;
   display: flex;
   justify-content: space-between;
 }
@@ -416,4 +417,12 @@ iframe {
   width: 100%;
   background-color: #202020;
   justify-self: flex-end;
+}
+
+.product-container{
+  display: flex;
+  flex-direction: column;
+}
+
+#checkout-button{
 }
