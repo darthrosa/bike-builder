@@ -8,7 +8,7 @@ class NavBar extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-        //   showModal: false
+          showModal: false
         }
       }
 
@@ -23,6 +23,10 @@ class NavBar extends React.Component {
 
       handleToggle = () => {
         this.setState({showModal: !this.state.showModal})
+      }
+
+      closeMenu = () => {
+        this.setState({showModal: false})
       }
 
 
@@ -45,11 +49,15 @@ class NavBar extends React.Component {
                     </nav>
                 </div>
                 {this.state.showModal ? (
-                    <div className='modal-container'>
-                        <div id='auth-modal'>
-                            <AuthModal handleToggle={this.handleToggle}/>
-                        </div>
-                    </div>
+                    <React.Fragment>
+                      <div className='modal-container'>
+                          <div id='auth-modal'>
+                              <AuthModal closeMenu={this.closeMenu} handleToggle={this.handleToggle}/>
+                          </div>
+                      </div>
+                      <div onClick={this.closeMenu} className="image-cover fixed"></div>
+                    </React.Fragment>
+                    
                     ) : null
                 }
             </div>

@@ -14,11 +14,12 @@
 }
 
 .logo {
-  width: 200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
   font-size: 40px;
   font-weight: 900;
-  margin-top: 15px;
-  margin-left: 20px;
   letter-spacing: 0.5px;
   border: none;
   color: #FFF;
@@ -27,23 +28,53 @@
 
 .logo:hover {
   color: #EF233C;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .nav-links {
+  width: 100%;
   display: flex;
-  width: 300px;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   font-size: 12px;
 }
 
+button, a, .link, .logo {
+  user-select: none;
+}
+
+.login-btn {
+  width: 100%;
+  margin: 6px 0px;
+  padding: 18px 0px;
+}
+
+.primary-btn:hover {
+  background-color: rgb(255, 65, 87);
+  color: #FFF;
+  border-color: rgb(255, 65, 87)
+}
+
+.secondary-btn {
+  border: 2px solid #EF233C;
+  background-color: transparent;
+  color: #EF233C;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
 .link {
-  padding: 3px;
+  height: 100%;
+  min-width: 150px;
   font-weight: 400;
   color: #FFF;
   font-size: 18px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .link:hover {
@@ -53,10 +84,16 @@
 
 #build-button {
   height: 100%;
-  width: 25%;
+  min-width: 150px;
   font-weight: 900;
   border: none;
 }
+
+#build-button:hover {
+  background-color: rgb(255, 65, 87);
+  color: #FFF;
+}
+
 
 a {
   font-weight: 700;
@@ -68,7 +105,7 @@ a {
   color: #FFF;
   text-transform: uppercase;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
   text-decoration: none;
 }
   
@@ -76,31 +113,31 @@ a:hover {
   color: #EF233C;
   background-color: transparent;
   border: 2px solid #EF233C;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 button {
+  box-sizing: border-box;
   font-weight: 700;
   font-size: 14px;
-  border: none;
-  padding: 9px 15px;
+  border: 2px solid transparent;
+  padding: 12px 21px;
   background-color: #EF233C;
   color: #FFF;
   text-transform: uppercase;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 button:hover {
   color: #EF233C;
   background-color: transparent;
   border: 2px solid #EF233C;
-  transition: 0.2s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .modal-container {
   background-color: transparent;
-  height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -109,12 +146,41 @@ button:hover {
 }
 
 #auth-modal {
-  background-color: blue;
-  height: 50vh;
+  position: relative;
+  padding: 30px 0px;
+  background-color: #FFF;
   width: 32vw;
+  min-width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.auth {
+  width: 100%;
+  padding: 30px;
+}
+
+.auth > h1 {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.close-menu {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-menu > svg {
+  width: 21px;
+  stroke: #EF233C;
+  stroke-width: 21px;
+}
+
+.close-menu:hover > svg {
+  stroke: rgb(255, 65, 87);
 }
 
 .dash-container{
@@ -139,6 +205,10 @@ button:hover {
 }
 
 .about-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background-color: #333333;
   width: 40vw;
 }
@@ -156,6 +226,7 @@ button:hover {
 }
 
 .ribbon {
+  position: relative;
   display: grid;
   font-size: 20px;
   grid-gap: 2px;
@@ -170,43 +241,40 @@ button:hover {
   font-size: 40px;
   font-weight: 700;
   line-height: 100px;
-  padding: 9px 9px 9px 40px;
+  padding: 9px 9px 9px 60px;
   display: flex;
   position: relative;
   text-decoration: none;
+  transition: 0.1s ease-in-out;
 }
 
 
 .ribbon-element:hover {
-  color: #EF233C;
-  background-color: #FFF;
-  transition: 0.2s ease-in-out;
+  background-color: rgb(255, 65, 87);
+  transition: 0.1s ease-in-out;
 }
 
-/* .arrow-right{
-  position: absolute;
-  height: 0;
-  width: 0;
-  top: 0px;
-  right: 0px;
-  background-color: #EF233C;
-  border-top: 60px solid transparent;
-  border-bottom: 58px solid transparent;
-  border-left: 60px solid #EF233C;
+.ribbon-element:hover #right-ribbon-svg {
+  fill: rgb(255, 65, 87);
+  transition: 0.1s ease-in-out;
 }
 
-.arrow-right:hover{
+.ribbon-svg {
   position: absolute;
-  height: 0;
-  width: 0;
-  top: 0px;
-  right: 0px;
-  background-color: #FFF;
-  border-top: 60px solid transparent;
-  border-bottom: 58px solid transparent;
-  border-left: 60px solid #EF233C;
-} */
+  z-index: 2;
+  left: 0;
+  top: 0;
+  height: 100%;
+  fill: #FFF;
+}
 
+#right-ribbon-svg {
+  transition: 0.1s ease-in-out;
+  right: 0;
+  left: unset;
+  fill: #EF233C;
+  background-color: #FFF;
+}
 
 footer {
   height: 140px;
@@ -282,13 +350,6 @@ iframe {
   align-items: center;
 }
 
-/* .skill-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-} */
-
 .skill-title {
   position: absolute;
   margin: auto;
@@ -328,7 +389,11 @@ iframe {
   background-color: #000;
   opacity: 0.5;
   transition: 0.3s ease-in-out;
-  z-index: 2;
+  z-index: 3;
+}
+
+.fixed {
+  position: fixed;
 }
 
 
@@ -407,10 +472,6 @@ iframe {
   max-width: 300px;
   max-height: 250px;
 }
-
-/* .product-container{
-  height: 700px;
-} */
 
 #cart-footer {
   height: 100px;

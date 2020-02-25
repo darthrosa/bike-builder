@@ -1,0 +1,68 @@
+.tvt-input-container {
+  margin: 45px 0px;
+  position: relative;
+}
+
+.tvt-input {
+  -webkit-appearance: none;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Roboto;
+  border-radius: 0px;
+  background-color: #f8f8f8;
+  border: none;
+  padding: 21px;
+  outline: none;
+  transition: 0.1s ease-in-out;
+  font-size: 18px;
+}
+
+.tvt-input:focus {
+  transition: 0.2s ease-in-out;
+  outline: none;
+}
+
+.tvt-input-underline {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 3px;
+}
+
+.tvt-input-placeholder {
+  position: absolute;
+  width: calc(100% - 24px);
+  left: 9px;
+  user-select: none;
+  pointer-events: none;
+  padding: 3px;
+}
+
+.tvt-input-placeholder, .char-counter {
+  left: 20px;
+}
+
+.ulnofocus {
+  transition: 0.2s ease-in-out;
+  width: 0%;
+  background: transparent;
+}
+
+.ulfocus {
+  transition: 0.4s ease-in-out;
+  width: 100%;
+  background: linear-gradient(90deg, #EF233C, rgb(255, 162, 173));
+}
+
+.phnofocus {
+  transition: 0.1s ease-in-out;
+  top: 21px;
+  color: #383838;
+}
+
+.phfocus {
+  transition: 0.2s ease-in-out;
+  top: -24px;
+  color: #EF233C;
+}
