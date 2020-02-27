@@ -5,7 +5,7 @@ const express = require('express'),
       authCtrl = require('./controllers/authController'),
       skillCtrl = require('./controllers/skillController'),
       cartCtrl = require('./controllers/cartController'),
-    //   emailCtrl = require('./controllers/mailerController'),
+      emailCtrl = require('./controllers/mailerController'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       app = express();
 
@@ -33,6 +33,8 @@ massive(CONNECTION_STRING).then(db => {
 app.post('/auth/login', authCtrl.login);
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/logout', authCtrl.logout);
+app.post('/auth/checkPassword', authCtrl.checkPassword);
+app.post('/auth/newPassword', authCtrl.editPassword);
 
 // SKILL for products ENDPOINT
 app.get('/api/skill/:id', skillCtrl.getSkill);
@@ -44,4 +46,4 @@ app.delete('/api/cart/:id', cartCtrl.removeFromCart);
 app.post('/api/payment', cartCtrl.payment);
 
 //NODEMAILER
-// app.post('api/email', emailCtrl.email);
+app.post('/api/email', emailCtrl.email);

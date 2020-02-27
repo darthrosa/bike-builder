@@ -40,8 +40,8 @@ const AuthModal = props => {
       <div className="close-menu" onClick={props.closeMenu}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 182.07 182.07">
           <g id="Layer_1-2" data-name="Layer 1">
-            <line class="cls-1" x1="3.54" y1="3.54" x2="178.54" y2="178.54" />
-            <line class="cls-1" x1="178.54" y1="3.54" x2="3.54" y2="178.54" />
+            <line className="cls-1" x1="3.54" y1="3.54" x2="178.54" y2="178.54" />
+            <line className="cls-1" x1="178.54" y1="3.54" x2="3.54" y2="178.54" />
           </g>
         </svg>
       </div>

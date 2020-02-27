@@ -39,7 +39,7 @@ module.exports = {
             async(err) => {
                 if(err){
                     return res.status(500).send(err)
-                }else{
+                } else {
                     await db.cart.payment_complete(customer_order_id)
                     await db.cart.create_order(user_id)
                     let user = await db.user.check_user(username)

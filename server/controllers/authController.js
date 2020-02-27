@@ -38,5 +38,31 @@ module.exports = {
     logout: (req, res) => {
         req.session.destroy();
         res.sendStatus(200)
+    },
+    editPassword: async (req, res) => {
+        const db = req.app.get('db')
+        const {newPassword} = req.body
+        
+        if(req.session.user){  
+            const salt = bcrypt.genSaltSync(10)
+            const hash = bcrypt.hashSync(newPassword, salt)
+            const user = await db.users.edit_password(hash)
+            delete user[0].password
+            res.status(200).send(req.session.user)
+        }
+    },
+    checkPassword: async (req, res) => {
+        const db = req.app.get('db')
+        const {currentPassword} = req.body
+        console.log(currentPassword)
+        const {username} = req.session.user
+        const user = await db.users.check_user(username)
+        const authorized = bcrypt.compareSync(currentPassword, user[0].password)
+        if(!authorized){
+            res.status(200).send('password does not match')
+        }
+        delete user[0].password
+        req.session.user = user
+        res.status(200).send(req.session.user)
     }
 }

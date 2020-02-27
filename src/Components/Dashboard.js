@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-// import AuthModal from './AuthModal';
 import '../App.css';
 
 const RibbonEl = ({id}) => (
   <svg id={id} className="ribbon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.22 122">
     <g id="Layer_2" data-name="Layer 2">
-      <polygon class="cls-1" points="39.22 61 0 0 0 122 39.22 61"/>
+      <polygon className="cls-1" points="39.22 61 0 0 0 122 39.22 61"/>
     </g>
   </svg>
 )
@@ -26,14 +25,22 @@ class Dashboard extends Component {
         <div className='dash-container'>
           <div className='container-one'>
             <img className="slide-img" 
-                 src='https://i.ytimg.com/vi/bIhm9RaX7qw/maxresdefault.jpg'
+                 src='https://i.ytimg.com/vi/FeNetcB8vuk/maxresdefault.jpg'
                  alt='group img'/>
+            <div className='welcome-container'>
+              <h1 id='welcome'>WELCOME</h1>
+              <h1 id='welcome-to'>TO</h1>
+              <h1 id='welcome-bb'>BikeBuilder</h1>
+              <p className='welcome-text'>Building you quality bicycles since 2020!</p>
+              <button onClick={() => this.props.history.push("/style")}>Build your bike
+              </button>
+            </div>
           </div>
           <div className='container-two'>
-            <div className='about-box'>
-              <h1>Title</h1>
-              <p>Text</p>
-              <button onClick={() => this.props.history.push('/event')}>Learn More</button>
+            <div className='res-box'>
+              <h1 className='res-title about-title'>About</h1>
+              <p className='res-text'>A long time ago in a galaxy far, far away there was a man seeking the perfect bike but not with the standard components, that came stock with a standard purchase so, he sought out for the perfect answer. In result to many years of research with the art. A website called BikeBuilder was made. Although, its skills were great, it has a lot to learn... but I believe BikeBuilder can save the world.</p>
+              <button onClick={() => this.props.history.push('/Resource')}>Learn More</button>
             </div>
             <img className='about-img' 
                  src='https://i.ytimg.com/vi/hvJ8kBVMAgM/maxresdefault.jpg' alt='about-img'/>
@@ -60,7 +67,11 @@ class Dashboard extends Component {
             </nav>
           </div>
         </div>
-        <footer></footer>
+        <footer>                    
+          <div onClick={() => this.props.history.push("/")} className="logo footer-logo">
+            BikeBuilder
+          </div>
+        </footer>
       </div>
     );
   }

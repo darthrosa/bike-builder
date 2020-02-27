@@ -7,11 +7,10 @@ class Maps extends React.Component {
         this.state = {
             locations: [
             { lat: 39, lng: -113.3},
-            {lat: 47.359423, lng: -122.021071},
-            {lat: 47.2052192, lng: -121.9884262},
-            {lat: 47.6307081, lng: -122.1434325},
-            {lat: 47.3084488, lng: -122.2140121},
-            {lat: 47.5524695, lng: -122.0425407}
+            {lat: 37.0965, lng: -113.5684},
+            {lat: 37.2982, lng: -113.0263},
+            {lat: 40.6461, lng: -111.4980},
+            {lat: 38.573, lng: -109.549}
             ]
         }
     }
@@ -29,11 +28,13 @@ class Maps extends React.Component {
 
     render() {
         return (
-            <Map google={this.props.google}
-                 zoom={8}
-                 initialCenter={{ lat: 47.444, lng: -122.176}}>
-            {this.displayMarkers()}
-            </Map>
+            <div id='google-map'>
+                <Map google={this.props.google}
+                     zoom={7.7}
+                     initialCenter={{ lat: 39, lng: -112}}>
+                    {this.displayMarkers()}
+                </Map>
+            </div>
         );
     }
 }

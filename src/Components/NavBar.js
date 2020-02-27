@@ -41,7 +41,7 @@ class NavBar extends React.Component {
                         BikeBuilder
                     </div>
                     <nav className="nav-links">
-                        <div className='link' onClick={() => this.props.history.push("/events")}>Events</div>
+                        {/* <div className='link' onClick={() => this.props.history.push("/events")}>Events</div> */}
                         <div className='link' onClick={() => this.props.history.push("/resource")}>
                             Resources
                         </div>
