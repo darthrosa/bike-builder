@@ -9,7 +9,8 @@ const express = require('express'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
       app = express();
 
-
+      
+app.use( express.static( `${__dirname}/../build` ) )
 app.use(express.json())
 app.use(
     session({
@@ -47,3 +48,10 @@ app.post('/api/payment', cartCtrl.payment);
 
 //NODEMAILER
 app.post('/api/email', emailCtrl.email);
+
+
+const path = require('path');
+
+app.get((req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
